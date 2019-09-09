@@ -1,0 +1,15 @@
+- name: Create t1.small device with ubuntu 18.04 on packet.net
+  hosts: localhost
+  tasks:
+    - name: First of all, task for credential varification
+      packet_sshkey:
+        key_file: ./id_rsa.pub    # save the ssh key files - public & private in the same folder as playbooks
+        label: My test key
+    - name: Now the task for creating server
+      packet_device:
+        project_id: b4988577-4303-440b-9fe9-9c397d2e7dee  # project id is Packet.net project UUID. Can be picked from packet.net portal
+        hostnames: SKt1server
+        operating_system: ubuntu_18_04
+        plan: t1.small.x86    # we can also use the value as baremetal_0 which is same as t2.small & called as Type 0 server
+        facility: ams1
+        state: active

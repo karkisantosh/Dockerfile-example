@@ -1,0 +1,10 @@
+- name: delete t1.small device and wait up to 10 minutes for absent state
+  hosts: localhost
+  tasks:
+  - name: Task to destroy or delete the server !
+    packet_device:
+      project_id: b4988577-4303-440b-9fe9-9c397d2e7dee
+      hostnames: SKt1server
+      facility: ams1
+      state: absent
+      wait_timeout: 600
