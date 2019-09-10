@@ -1,4 +1,4 @@
-This dockerfile takes standard ubuntu 18.04 docker container image & then installs atom text editor on top of it
+This dockerfile takes standard ubuntu 18.04 docker container image & then installs atom text editor on top of it. Though this new image is not useful !
 
 To build this image, use command:
 
